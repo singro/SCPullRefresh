@@ -20,7 +20,7 @@ A pull refresh for easily customize refresh animation.
  * Dont forget to call super in your VCs for scrollView delegate & life cycle methods.
 
 ####Customize animation
- * see demo in SCCircularRefreshView or SCBubbleRefreshView to customization
+ * see demo in SCCircularRefreshView or SCBubbleRefreshView for customization
 
 ####License
 

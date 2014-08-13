@@ -13,7 +13,6 @@
 		294B371B199BA44B00718F3F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 294B3719199BA44B00718F3F /* InfoPlist.strings */; };
 		294B371D199BA44B00718F3F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 294B371C199BA44B00718F3F /* main.m */; };
 		294B3721199BA44B00718F3F /* SCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 294B3720199BA44B00718F3F /* SCAppDelegate.m */; };
-		294B3723199BA44B00718F3F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 294B3722199BA44B00718F3F /* Images.xcassets */; };
 		294B372A199BA44B00718F3F /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 294B3729199BA44B00718F3F /* XCTest.framework */; };
 		294B372B199BA44B00718F3F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 294B3710199BA44B00718F3F /* Foundation.framework */; };
 		294B372C199BA44B00718F3F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 294B3714199BA44B00718F3F /* UIKit.framework */; };
@@ -42,7 +41,6 @@
 		294B371E199BA44B00718F3F /* SCPullRefresh-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SCPullRefresh-Prefix.pch"; sourceTree = "<group>"; };
 		294B371F199BA44B00718F3F /* SCAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCAppDelegate.h; sourceTree = "<group>"; };
 		294B3720199BA44B00718F3F /* SCAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCAppDelegate.m; sourceTree = "<group>"; };
-		294B3722199BA44B00718F3F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		294B3728199BA44B00718F3F /* SCPullRefreshTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SCPullRefreshTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		294B3729199BA44B00718F3F /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		294B3731199BA44B00718F3F /* SCPullRefreshTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SCPullRefreshTests-Info.plist"; sourceTree = "<group>"; };
@@ -109,7 +107,6 @@
 			children = (
 				294B371F199BA44B00718F3F /* SCAppDelegate.h */,
 				294B3720199BA44B00718F3F /* SCAppDelegate.m */,
-				294B3722199BA44B00718F3F /* Images.xcassets */,
 				294B3717199BA44B00718F3F /* Supporting Files */,
 			);
 			path = SCPullRefresh;
@@ -221,7 +218,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				294B371B199BA44B00718F3F /* InfoPlist.strings in Resources */,
-				294B3723199BA44B00718F3F /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,8 +352,6 @@
 		294B373A199BA44B00718F3F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SCPullRefresh/SCPullRefresh-Prefix.pch";
 				INFOPLIST_FILE = "SCPullRefresh/SCPullRefresh-Info.plist";
@@ -369,8 +363,6 @@
 		294B373B199BA44B00718F3F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SCPullRefresh/SCPullRefresh-Prefix.pch";
 				INFOPLIST_FILE = "SCPullRefresh/SCPullRefresh-Info.plist";
@@ -438,6 +430,7 @@
 				294B373B199BA44B00718F3F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		294B373C199BA44B00718F3F /* Build configuration list for PBXNativeTarget "SCPullRefreshTests" */ = {
 			isa = XCConfigurationList;
@@ -446,6 +439,7 @@
 				294B373E199BA44B00718F3F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

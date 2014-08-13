@@ -12,9 +12,6 @@
 
 @property (nonatomic, strong) UITableView *tableView;
 
-@property (nonatomic, assign, getter = isViewShowing)   BOOL viewShowing;
-@property (nonatomic, assign, getter = isHiddenEnabled) BOOL hiddenEnabled;
-
 @property (nonatomic, assign) CGFloat tableViewInsertTop;
 @property (nonatomic, assign) CGFloat tableViewInsertBottom;
 

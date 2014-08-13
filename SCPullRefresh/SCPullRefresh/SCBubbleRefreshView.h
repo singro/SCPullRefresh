@@ -1,5 +1,5 @@
 //
-//  SCAnimationView.h
+//  SCBubbleRefreshView.h
 //  v2ex-iOS
 //
 //  Created by Singro on 4/3/14.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SCAnimationView : UIView
+@interface SCBubbleRefreshView : UIView
 
 @property (nonatomic, assign) CGFloat timeOffset;  // 0.0 ~ 1.0
 

@@ -8,12 +8,19 @@
 
 #import "SCAppDelegate.h"
 
+#import "SCRootViewController.h"
+
 @implementation SCAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
+    
+    SCRootViewController *rootVC = [[SCRootViewController alloc] init];
+    UINavigationController *rootNavigationController = [[UINavigationController alloc] initWithRootViewController:rootVC];
+    
+    self.window.rootViewController = rootNavigationController;
+    
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;

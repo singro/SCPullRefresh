@@ -19,10 +19,14 @@
 		294B3734199BA44B00718F3F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 294B3732199BA44B00718F3F /* InfoPlist.strings */; };
 		294B3736199BA44B00718F3F /* SCPullRefreshTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 294B3735199BA44B00718F3F /* SCPullRefreshTests.m */; };
 		294B3747199BC07D00718F3F /* CAAnimation+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 294B3742199BC07D00718F3F /* CAAnimation+Blocks.m */; };
-		294B3748199BC07D00718F3F /* SCAnimationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 294B3744199BC07D00718F3F /* SCAnimationView.m */; };
+		294B3748199BC07D00718F3F /* SCBubbleRefreshView.m in Sources */ = {isa = PBXBuildFile; fileRef = 294B3744199BC07D00718F3F /* SCBubbleRefreshView.m */; };
 		294B3749199BC07D00718F3F /* SCPullRefreshViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 294B3746199BC07D00718F3F /* SCPullRefreshViewController.m */; };
 		294B3751199BC11400718F3F /* ScrollViewFrameAccessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 294B374E199BC11400718F3F /* ScrollViewFrameAccessor.m */; };
 		294B3752199BC11400718F3F /* ViewFrameAccessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 294B3750199BC11400718F3F /* ViewFrameAccessor.m */; };
+		294B3755199BD5D800718F3F /* SCRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 294B3754199BD5D800718F3F /* SCRootViewController.m */; };
+		294B3757199BD72A00718F3F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 294B3756199BD72A00718F3F /* Images.xcassets */; };
+		294B375A199BD9F800718F3F /* SCCircularRefreshView.m in Sources */ = {isa = PBXBuildFile; fileRef = 294B3759199BD9F800718F3F /* SCCircularRefreshView.m */; };
+		294B375E199BDA7E00718F3F /* DACircularProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 294B375D199BDA7E00718F3F /* DACircularProgressView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,8 +57,8 @@
 		294B3735199BA44B00718F3F /* SCPullRefreshTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCPullRefreshTests.m; sourceTree = "<group>"; };
 		294B3741199BC07D00718F3F /* CAAnimation+Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CAAnimation+Blocks.h"; sourceTree = "<group>"; };
 		294B3742199BC07D00718F3F /* CAAnimation+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CAAnimation+Blocks.m"; sourceTree = "<group>"; };
-		294B3743199BC07D00718F3F /* SCAnimationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCAnimationView.h; sourceTree = "<group>"; };
-		294B3744199BC07D00718F3F /* SCAnimationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCAnimationView.m; sourceTree = "<group>"; };
+		294B3743199BC07D00718F3F /* SCBubbleRefreshView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCBubbleRefreshView.h; sourceTree = "<group>"; };
+		294B3744199BC07D00718F3F /* SCBubbleRefreshView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCBubbleRefreshView.m; sourceTree = "<group>"; };
 		294B3745199BC07D00718F3F /* SCPullRefreshViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCPullRefreshViewController.h; sourceTree = "<group>"; };
 		294B3746199BC07D00718F3F /* SCPullRefreshViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCPullRefreshViewController.m; sourceTree = "<group>"; };
 		294B374C199BC11400718F3F /* FrameAccessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FrameAccessor.h; sourceTree = "<group>"; };
@@ -62,6 +66,13 @@
 		294B374E199BC11400718F3F /* ScrollViewFrameAccessor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollViewFrameAccessor.m; sourceTree = "<group>"; };
 		294B374F199BC11400718F3F /* ViewFrameAccessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewFrameAccessor.h; sourceTree = "<group>"; };
 		294B3750199BC11400718F3F /* ViewFrameAccessor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewFrameAccessor.m; sourceTree = "<group>"; };
+		294B3753199BD5D800718F3F /* SCRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCRootViewController.h; sourceTree = "<group>"; };
+		294B3754199BD5D800718F3F /* SCRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCRootViewController.m; sourceTree = "<group>"; };
+		294B3756199BD72A00718F3F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		294B3758199BD9F800718F3F /* SCCircularRefreshView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCCircularRefreshView.h; sourceTree = "<group>"; };
+		294B3759199BD9F800718F3F /* SCCircularRefreshView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCCircularRefreshView.m; sourceTree = "<group>"; };
+		294B375C199BDA7E00718F3F /* DACircularProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DACircularProgressView.h; sourceTree = "<group>"; };
+		294B375D199BDA7E00718F3F /* DACircularProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DACircularProgressView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +136,9 @@
 				294B373F199BC01F00718F3F /* SCPullRefresh */,
 				294B371F199BA44B00718F3F /* SCAppDelegate.h */,
 				294B3720199BA44B00718F3F /* SCAppDelegate.m */,
+				294B3753199BD5D800718F3F /* SCRootViewController.h */,
+				294B3754199BD5D800718F3F /* SCRootViewController.m */,
+				294B3756199BD72A00718F3F /* Images.xcassets */,
 				294B3717199BA44B00718F3F /* Supporting Files */,
 			);
 			path = SCPullRefresh;
@@ -163,8 +177,10 @@
 			isa = PBXGroup;
 			children = (
 				294B3740199BC07D00718F3F /* CAAnimationBlocks */,
-				294B3743199BC07D00718F3F /* SCAnimationView.h */,
-				294B3744199BC07D00718F3F /* SCAnimationView.m */,
+				294B3743199BC07D00718F3F /* SCBubbleRefreshView.h */,
+				294B3744199BC07D00718F3F /* SCBubbleRefreshView.m */,
+				294B3758199BD9F800718F3F /* SCCircularRefreshView.h */,
+				294B3759199BD9F800718F3F /* SCCircularRefreshView.m */,
 				294B3745199BC07D00718F3F /* SCPullRefreshViewController.h */,
 				294B3746199BC07D00718F3F /* SCPullRefreshViewController.m */,
 			);
@@ -183,6 +199,7 @@
 		294B374A199BC11400718F3F /* Additions */ = {
 			isa = PBXGroup;
 			children = (
+				294B375B199BDA7E00718F3F /* DACircularProgress */,
 				294B374B199BC11400718F3F /* FrameAccessor */,
 			);
 			path = Additions;
@@ -198,6 +215,15 @@
 				294B3750199BC11400718F3F /* ViewFrameAccessor.m */,
 			);
 			path = FrameAccessor;
+			sourceTree = "<group>";
+		};
+		294B375B199BDA7E00718F3F /* DACircularProgress */ = {
+			isa = PBXGroup;
+			children = (
+				294B375C199BDA7E00718F3F /* DACircularProgressView.h */,
+				294B375D199BDA7E00718F3F /* DACircularProgressView.m */,
+			);
+			path = DACircularProgress;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -277,6 +303,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				294B371B199BA44B00718F3F /* InfoPlist.strings in Resources */,
+				294B3757199BD72A00718F3F /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,9 +324,12 @@
 			files = (
 				294B3751199BC11400718F3F /* ScrollViewFrameAccessor.m in Sources */,
 				294B3749199BC07D00718F3F /* SCPullRefreshViewController.m in Sources */,
+				294B3755199BD5D800718F3F /* SCRootViewController.m in Sources */,
 				294B3752199BC11400718F3F /* ViewFrameAccessor.m in Sources */,
 				294B3721199BA44B00718F3F /* SCAppDelegate.m in Sources */,
-				294B3748199BC07D00718F3F /* SCAnimationView.m in Sources */,
+				294B375E199BDA7E00718F3F /* DACircularProgressView.m in Sources */,
+				294B375A199BD9F800718F3F /* SCCircularRefreshView.m in Sources */,
+				294B3748199BC07D00718F3F /* SCBubbleRefreshView.m in Sources */,
 				294B371D199BA44B00718F3F /* main.m in Sources */,
 				294B3747199BC07D00718F3F /* CAAnimation+Blocks.m in Sources */,
 			);
@@ -416,6 +446,8 @@
 		294B373A199BA44B00718F3F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SCPullRefresh/SCPullRefresh-Prefix.pch";
 				INFOPLIST_FILE = "SCPullRefresh/SCPullRefresh-Info.plist";
@@ -428,6 +460,8 @@
 		294B373B199BA44B00718F3F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SCPullRefresh/SCPullRefresh-Prefix.pch";
 				INFOPLIST_FILE = "SCPullRefresh/SCPullRefresh-Info.plist";

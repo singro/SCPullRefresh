@@ -8,19 +8,27 @@
 
 #import "SCPullRefreshViewController.h"
 
-#import "SCAnimationView.h"
+#import "SCBubbleRefreshView.h"
+#import "SCCircularRefreshView.h"
+
+
+//#define kBubbleAnimation
+
 
 static CGFloat const kRefreshHeight = 44.0f;
-
-#define kScreenHeight ([UIScreen mainScreen].bounds.size.height)
 
 @interface SCPullRefreshViewController ()
 
 @property (nonatomic, strong) UIView *tableHeaderView;
 @property (nonatomic, strong) UIView *tableFooterView;
 
-@property (nonatomic, strong) SCAnimationView *refreshView;
-@property (nonatomic, strong) SCAnimationView *loadMoreView;
+#ifdef kBubbleAnimation
+@property (nonatomic, strong) SCBubbleRefreshView *refreshView;
+@property (nonatomic, strong) SCBubbleRefreshView *loadMoreView;
+#else
+@property (nonatomic, strong) SCCircularRefreshView *refreshView;
+@property (nonatomic, strong) SCCircularRefreshView *loadMoreView;
+#endif
 
 @property (nonatomic, assign) BOOL isLoadingMore;
 @property (nonatomic, assign) BOOL isRefreshing;
@@ -41,9 +49,6 @@ static CGFloat const kRefreshHeight = 44.0f;
         self.isRefreshing = NO;
         self.hadLoadMore = NO;
         
-        _viewShowing = NO;
-        _hiddenEnabled = NO;
-        
         self.tableViewInsertTop = 64;
         self.tableViewInsertBottom = 0;
 
@@ -54,15 +59,34 @@ static CGFloat const kRefreshHeight = 44.0f;
 - (void)loadView {
     [super loadView];
     
+#ifdef kBubbleAnimation
+    
+    // bubble animation
     self.tableHeaderView = [[UIView alloc] initWithFrame:(CGRect){0, 0, 320, 0}];
-    self.refreshView = [[SCAnimationView alloc] initWithFrame:(CGRect){0, -44, 320, 44}];
+    self.refreshView = [[SCBubbleRefreshView alloc] initWithFrame:(CGRect){0, -44, 320, 44}];
     self.refreshView.timeOffset = 0.0;
     [self.tableHeaderView addSubview:self.refreshView];
-
+    
     self.tableFooterView = [[UIView alloc] initWithFrame:(CGRect){0, 0, 320, 0}];
-    self.loadMoreView = [[SCAnimationView alloc] initWithFrame:(CGRect){0, 0, 320, 44}];
+    self.loadMoreView = [[SCBubbleRefreshView alloc] initWithFrame:(CGRect){0, 0, 320, 44}];
     self.loadMoreView.timeOffset = 0.0;
     [self.tableFooterView addSubview:self.loadMoreView];
+    
+#else
+    
+    // circular aniamtion
+    self.tableHeaderView = [[UIView alloc] initWithFrame:(CGRect){0, 0, 320, 0}];
+    self.refreshView = [[SCCircularRefreshView alloc] initWithFrame:(CGRect){160, -22, 320, 44}];
+    self.refreshView.timeOffset = 0.0;
+    [self.tableHeaderView addSubview:self.refreshView];
+    
+    self.tableFooterView = [[UIView alloc] initWithFrame:(CGRect){0, 0, 320, 0}];
+    self.loadMoreView = [[SCCircularRefreshView alloc] initWithFrame:(CGRect){160, 22, 320, 44}];
+    self.loadMoreView.timeOffset = 0.0;
+    [self.tableFooterView addSubview:self.loadMoreView];
+    
+#endif
+
     
 }
 
@@ -129,7 +153,7 @@ static CGFloat const kRefreshHeight = 44.0f;
         self.loadMoreView.hidden = YES;
     }
     
-    if (scrollView.contentSizeHeight + scrollView.contentInsetTop < kScreenHeight) {
+    if (scrollView.contentSizeHeight + scrollView.contentInsetTop < [UIScreen mainScreen].bounds.size.height) {
         return;
     }
 
@@ -154,11 +178,10 @@ static CGFloat const kRefreshHeight = 44.0f;
     if (refreshOffset > 60 && self.refreshBlock && !self.isRefreshing) {
         [self beginRefresh];
     }
-//    NSLog(@"refreshOffset:  %.f", refreshOffset);
 
     // loadMore
     CGFloat loadMoreOffset = scrollView.contentSizeHeight - self.view.height - scrollView.contentOffsetY + scrollView.contentInsetBottom;
-    if (loadMoreOffset < -60 && self.loadMoreBlock && !self.isLoadingMore && scrollView.contentSizeHeight > kScreenHeight) {
+    if (loadMoreOffset < -60 && self.loadMoreBlock && !self.isLoadingMore && scrollView.contentSizeHeight > [UIScreen mainScreen].bounds.size.height) {
         [self beginLoadMore];
     }
     

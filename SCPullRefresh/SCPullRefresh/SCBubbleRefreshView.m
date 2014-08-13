@@ -1,12 +1,12 @@
 //
-//  SCAnimationView.m
+//  SCBubbleRefreshView.m
 //  v2ex-iOS
 //
 //  Created by Singro on 4/3/14.
 //  Copyright (c) 2014 Singro. All rights reserved.
 //
 
-#import "SCAnimationView.h"
+#import "SCBubbleRefreshView.h"
 
 #import "CAAnimation+Blocks.h"
 
@@ -17,9 +17,7 @@ static NSUInteger const kBubbleCout = 5;
 
 #define kLayerPosition ((CGPoint){arc4random() % ((NSInteger)self.width - 240) + 120, arc4random() % ((NSInteger)self.height - 30) + 15})
 
-@interface SCAnimationView ()
-
-//@property (nonatomic, strong) CALayer *animationLayer;
+@interface SCBubbleRefreshView ()
 
 @property (nonatomic, strong) NSMutableArray *layerArray;
 
@@ -27,14 +25,13 @@ static NSUInteger const kBubbleCout = 5;
 
 @end
 
-@implementation SCAnimationView
+@implementation SCBubbleRefreshView
 
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
         
-//        self.backgroundColor = [UIColor whiteColor];
         self.timer = [[NSTimer alloc] init];
         [self.timer invalidate];
         
@@ -67,7 +64,6 @@ static NSUInteger const kBubbleCout = 5;
     _timeOffset = timeOffset;
     
     if (!self.timer.isValid) {
-//        NSLog(@"timeOffset:  %.2f", timeOffset * 2.0);
         for (int i = 0; i < self.layerArray.count; i ++) {
             CALayer *animationLayer = self.layerArray[i];
             animationLayer.timeOffset = timeOffset * 2.0;
@@ -96,7 +92,6 @@ static NSUInteger const kBubbleCout = 5;
     for (int i = 0; i < self.layerArray.count; i ++) {
         CALayer *animationLayer = self.layerArray[i];
         animationLayer.speed = 1.0;
-//        animationLayer.repeatCount = 3;
     }
     
 }
@@ -122,13 +117,13 @@ static NSUInteger const kBubbleCout = 5;
         
         [animationLayer addAnimation:animationGroup forKey:kInitAnimation];
     }
-
     
 }
 
 
 
 - (void)animateLoop {
+    
     static NSInteger index = 0;
 
     CALayer *layer = self.layerArray[index];

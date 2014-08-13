@@ -18,6 +18,11 @@
 		294B372C199BA44B00718F3F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 294B3714199BA44B00718F3F /* UIKit.framework */; };
 		294B3734199BA44B00718F3F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 294B3732199BA44B00718F3F /* InfoPlist.strings */; };
 		294B3736199BA44B00718F3F /* SCPullRefreshTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 294B3735199BA44B00718F3F /* SCPullRefreshTests.m */; };
+		294B3747199BC07D00718F3F /* CAAnimation+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 294B3742199BC07D00718F3F /* CAAnimation+Blocks.m */; };
+		294B3748199BC07D00718F3F /* SCAnimationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 294B3744199BC07D00718F3F /* SCAnimationView.m */; };
+		294B3749199BC07D00718F3F /* SCPullRefreshViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 294B3746199BC07D00718F3F /* SCPullRefreshViewController.m */; };
+		294B3751199BC11400718F3F /* ScrollViewFrameAccessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 294B374E199BC11400718F3F /* ScrollViewFrameAccessor.m */; };
+		294B3752199BC11400718F3F /* ViewFrameAccessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 294B3750199BC11400718F3F /* ViewFrameAccessor.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +51,17 @@
 		294B3731199BA44B00718F3F /* SCPullRefreshTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SCPullRefreshTests-Info.plist"; sourceTree = "<group>"; };
 		294B3733199BA44B00718F3F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		294B3735199BA44B00718F3F /* SCPullRefreshTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCPullRefreshTests.m; sourceTree = "<group>"; };
+		294B3741199BC07D00718F3F /* CAAnimation+Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CAAnimation+Blocks.h"; sourceTree = "<group>"; };
+		294B3742199BC07D00718F3F /* CAAnimation+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CAAnimation+Blocks.m"; sourceTree = "<group>"; };
+		294B3743199BC07D00718F3F /* SCAnimationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCAnimationView.h; sourceTree = "<group>"; };
+		294B3744199BC07D00718F3F /* SCAnimationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCAnimationView.m; sourceTree = "<group>"; };
+		294B3745199BC07D00718F3F /* SCPullRefreshViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCPullRefreshViewController.h; sourceTree = "<group>"; };
+		294B3746199BC07D00718F3F /* SCPullRefreshViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCPullRefreshViewController.m; sourceTree = "<group>"; };
+		294B374C199BC11400718F3F /* FrameAccessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FrameAccessor.h; sourceTree = "<group>"; };
+		294B374D199BC11400718F3F /* ScrollViewFrameAccessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollViewFrameAccessor.h; sourceTree = "<group>"; };
+		294B374E199BC11400718F3F /* ScrollViewFrameAccessor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollViewFrameAccessor.m; sourceTree = "<group>"; };
+		294B374F199BC11400718F3F /* ViewFrameAccessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewFrameAccessor.h; sourceTree = "<group>"; };
+		294B3750199BC11400718F3F /* ViewFrameAccessor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewFrameAccessor.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +121,8 @@
 		294B3716199BA44B00718F3F /* SCPullRefresh */ = {
 			isa = PBXGroup;
 			children = (
+				294B374A199BC11400718F3F /* Additions */,
+				294B373F199BC01F00718F3F /* SCPullRefresh */,
 				294B371F199BA44B00718F3F /* SCAppDelegate.h */,
 				294B3720199BA44B00718F3F /* SCAppDelegate.m */,
 				294B3717199BA44B00718F3F /* Supporting Files */,
@@ -139,6 +157,47 @@
 				294B3732199BA44B00718F3F /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		294B373F199BC01F00718F3F /* SCPullRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				294B3740199BC07D00718F3F /* CAAnimationBlocks */,
+				294B3743199BC07D00718F3F /* SCAnimationView.h */,
+				294B3744199BC07D00718F3F /* SCAnimationView.m */,
+				294B3745199BC07D00718F3F /* SCPullRefreshViewController.h */,
+				294B3746199BC07D00718F3F /* SCPullRefreshViewController.m */,
+			);
+			path = SCPullRefresh;
+			sourceTree = "<group>";
+		};
+		294B3740199BC07D00718F3F /* CAAnimationBlocks */ = {
+			isa = PBXGroup;
+			children = (
+				294B3741199BC07D00718F3F /* CAAnimation+Blocks.h */,
+				294B3742199BC07D00718F3F /* CAAnimation+Blocks.m */,
+			);
+			path = CAAnimationBlocks;
+			sourceTree = "<group>";
+		};
+		294B374A199BC11400718F3F /* Additions */ = {
+			isa = PBXGroup;
+			children = (
+				294B374B199BC11400718F3F /* FrameAccessor */,
+			);
+			path = Additions;
+			sourceTree = "<group>";
+		};
+		294B374B199BC11400718F3F /* FrameAccessor */ = {
+			isa = PBXGroup;
+			children = (
+				294B374C199BC11400718F3F /* FrameAccessor.h */,
+				294B374D199BC11400718F3F /* ScrollViewFrameAccessor.h */,
+				294B374E199BC11400718F3F /* ScrollViewFrameAccessor.m */,
+				294B374F199BC11400718F3F /* ViewFrameAccessor.h */,
+				294B3750199BC11400718F3F /* ViewFrameAccessor.m */,
+			);
+			path = FrameAccessor;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,8 +295,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				294B3751199BC11400718F3F /* ScrollViewFrameAccessor.m in Sources */,
+				294B3749199BC07D00718F3F /* SCPullRefreshViewController.m in Sources */,
+				294B3752199BC11400718F3F /* ViewFrameAccessor.m in Sources */,
 				294B3721199BA44B00718F3F /* SCAppDelegate.m in Sources */,
+				294B3748199BC07D00718F3F /* SCAnimationView.m in Sources */,
 				294B371D199BA44B00718F3F /* main.m in Sources */,
+				294B3747199BC07D00718F3F /* CAAnimation+Blocks.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,6 +419,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SCPullRefresh/SCPullRefresh-Prefix.pch";
 				INFOPLIST_FILE = "SCPullRefresh/SCPullRefresh-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -366,6 +431,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SCPullRefresh/SCPullRefresh-Prefix.pch";
 				INFOPLIST_FILE = "SCPullRefresh/SCPullRefresh-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

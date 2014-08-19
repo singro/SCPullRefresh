@@ -24,9 +24,9 @@ A pull refresh for easily customize refresh animation.
 
 ####DEMO
  * bubble effect
-![Bubble](http://ww1.sinaimg.cn/large/84efdcc6gw1ejibyjkxy1g208w0fsh14.gif)
+ - ![Bubble](http://ww1.sinaimg.cn/large/84efdcc6gw1ejibyjkxy1g208w0fsh14.gif)
  * circular effect
-![Circular](http://ww1.sinaimg.cn/large/84efdcc6gw1ejibywk6jxg208w0fstt1.gif)
+ - ![Circular](http://ww1.sinaimg.cn/large/84efdcc6gw1ejibywk6jxg208w0fstt1.gif)
 
 ####License
 

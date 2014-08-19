@@ -22,6 +22,10 @@ A pull refresh for easily customize refresh animation.
 ####Customize animation
  * see demo in SCCircularRefreshView or SCBubbleRefreshView for customization
 
+####DEMO
+ * ![Bubble](http://ww1.sinaimg.cn/large/84efdcc6gw1ejibyjkxy1g208w0fsh14.gif)
+ * ![Circular](http://ww1.sinaimg.cn/large/84efdcc6gw1ejibywk6jxg208w0fstt1.gif)
+
 ####License
 
 MIT

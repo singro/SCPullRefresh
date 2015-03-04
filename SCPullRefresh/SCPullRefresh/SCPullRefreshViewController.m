@@ -211,10 +211,12 @@ static CGFloat const kRefreshHeight = 44.0f;
     [self.refreshView beginRefreshing];
     
     self.isRefreshing = YES;
+    CGPoint contentOffset = self.tableView.contentOffset;
     
     self.refreshBlock();
     [UIView animateWithDuration:0.2 animations:^{
         self.tableView.contentInsetTop = kRefreshHeight + self.tableViewInsertTop;
+        self.tableView.contentOffset = contentOffset;
     }];
     
 }
@@ -237,12 +239,14 @@ static CGFloat const kRefreshHeight = 44.0f;
     
     self.isLoadingMore = YES;
     self.hadLoadMore = YES;
+    CGPoint contentOffset = self.tableView.contentOffset;
     
     if (self.loadMoreBlock) {
         self.loadMoreBlock();
     }
     [UIView animateWithDuration:0.2 animations:^{
         self.tableView.contentInsetBottom = kRefreshHeight + self.tableViewInsertBottom;
+        self.tableView.contentOffset = contentOffset;
     }];
     
     

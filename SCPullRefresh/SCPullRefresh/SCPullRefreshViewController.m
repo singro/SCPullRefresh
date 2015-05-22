@@ -208,16 +208,29 @@ static CGFloat const kRefreshHeight = 44.0f;
 
 - (void)beginRefresh {
     
-    [self.refreshView beginRefreshing];
+    if (self.isRefreshing) {
+        return;
+    }
     
     self.isRefreshing = YES;
-    CGPoint contentOffset = self.tableView.contentOffset;
     
-    self.refreshBlock();
-    [UIView animateWithDuration:0.2 animations:^{
-        self.tableView.contentInsetTop = kRefreshHeight + self.tableViewInsertTop;
-        self.tableView.contentOffset = contentOffset;
-    }];
+    [self.refreshView beginRefreshing];
+    
+    if (self.refreshBlock) {
+        self.refreshBlock();
+    }
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [UIView animateWithDuration:0.15 delay:0 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
+            
+            self.tableView.contentInsetTop = kRefreshHeight + self.tableViewInsertTop;
+            [self.tableView setContentOffset:(CGPoint){0,- (kRefreshHeight + self.tableViewInsertTop )} animated:NO];
+            self.tableView.scrollIndicatorInsets = self.tableView.contentInset;
+            
+        } completion:^(BOOL finished){
+            
+        }];
+    });
     
 }
 

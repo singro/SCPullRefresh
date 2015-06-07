@@ -12,7 +12,7 @@
 #import "SCCircularRefreshView.h"
 
 
-#define kBubbleAnimation
+//#define kBubbleAnimation
 
 
 static CGFloat const kRefreshHeight = 44.0f;

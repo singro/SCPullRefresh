@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		29399D9C1B23E70500AEA162 /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29399D9B1B23E70500AEA162 /* Launch Screen.xib */; };
 		294B3711199BA44B00718F3F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 294B3710199BA44B00718F3F /* Foundation.framework */; };
 		294B3713199BA44B00718F3F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 294B3712199BA44B00718F3F /* CoreGraphics.framework */; };
 		294B3715199BA44B00718F3F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 294B3714199BA44B00718F3F /* UIKit.framework */; };
@@ -40,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		29399D9B1B23E70500AEA162 /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "Launch Screen.xib"; sourceTree = "<group>"; };
 		294B370D199BA44B00718F3F /* SCPullRefresh.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SCPullRefresh.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		294B3710199BA44B00718F3F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		294B3712199BA44B00718F3F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -138,6 +140,7 @@
 				294B3720199BA44B00718F3F /* SCAppDelegate.m */,
 				294B3753199BD5D800718F3F /* SCRootViewController.h */,
 				294B3754199BD5D800718F3F /* SCRootViewController.m */,
+				29399D9B1B23E70500AEA162 /* Launch Screen.xib */,
 				294B3756199BD72A00718F3F /* Images.xcassets */,
 				294B3717199BA44B00718F3F /* Supporting Files */,
 			);
@@ -304,6 +307,7 @@
 			files = (
 				294B371B199BA44B00718F3F /* InfoPlist.strings in Resources */,
 				294B3757199BD72A00718F3F /* Images.xcassets in Resources */,
+				29399D9C1B23E70500AEA162 /* Launch Screen.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -447,7 +451,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SCPullRefresh/SCPullRefresh-Prefix.pch";
 				INFOPLIST_FILE = "SCPullRefresh/SCPullRefresh-Info.plist";
@@ -461,7 +464,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SCPullRefresh/SCPullRefresh-Prefix.pch";
 				INFOPLIST_FILE = "SCPullRefresh/SCPullRefresh-Info.plist";

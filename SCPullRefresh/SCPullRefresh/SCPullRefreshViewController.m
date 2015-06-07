@@ -13,6 +13,7 @@
 
 
 //#define kBubbleAnimation
+#define kScreenWidth ([UIScreen mainScreen].bounds.size.width)
 
 
 static CGFloat const kRefreshHeight = 44.0f;
@@ -51,7 +52,8 @@ static CGFloat const kRefreshHeight = 44.0f;
         
         self.tableViewInsertTop = 64;
         self.tableViewInsertBottom = 0;
-
+        
+        
     }
     return self;
 }
@@ -62,31 +64,31 @@ static CGFloat const kRefreshHeight = 44.0f;
 #ifdef kBubbleAnimation
     
     // bubble animation
-    self.tableHeaderView = [[UIView alloc] initWithFrame:(CGRect){0, 0, 320, 0}];
-    self.refreshView = [[SCBubbleRefreshView alloc] initWithFrame:(CGRect){0, -44, 320, 44}];
+    self.tableHeaderView = [[UIView alloc] initWithFrame:(CGRect){0, 0, kScreenWidth, 0}];
+    self.refreshView = [[SCBubbleRefreshView alloc] initWithFrame:(CGRect){0, -44, kScreenWidth, 44}];
     self.refreshView.timeOffset = 0.0;
     [self.tableHeaderView addSubview:self.refreshView];
     
-    self.tableFooterView = [[UIView alloc] initWithFrame:(CGRect){0, 0, 320, 0}];
-    self.loadMoreView = [[SCBubbleRefreshView alloc] initWithFrame:(CGRect){0, 0, 320, 44}];
+    self.tableFooterView = [[UIView alloc] initWithFrame:(CGRect){0, 0, kScreenWidth, 0}];
+    self.loadMoreView = [[SCBubbleRefreshView alloc] initWithFrame:(CGRect){0, 0, kScreenWidth, 44}];
     self.loadMoreView.timeOffset = 0.0;
     [self.tableFooterView addSubview:self.loadMoreView];
     
 #else
     
     // circular aniamtion
-    self.tableHeaderView = [[UIView alloc] initWithFrame:(CGRect){0, 0, 320, 0}];
-    self.refreshView = [[SCCircularRefreshView alloc] initWithFrame:(CGRect){160, -22, 320, 44}];
+    self.tableHeaderView = [[UIView alloc] initWithFrame:(CGRect){0, 0, kScreenWidth, 0}];
+    self.refreshView = [[SCCircularRefreshView alloc] initWithFrame:(CGRect){kScreenWidth/2, -22, kScreenWidth, 44}];
     self.refreshView.timeOffset = 0.0;
     [self.tableHeaderView addSubview:self.refreshView];
     
-    self.tableFooterView = [[UIView alloc] initWithFrame:(CGRect){0, 0, 320, 0}];
-    self.loadMoreView = [[SCCircularRefreshView alloc] initWithFrame:(CGRect){160, 22, 320, 44}];
+    self.tableFooterView = [[UIView alloc] initWithFrame:(CGRect){0, 0, kScreenWidth, 0}];
+    self.loadMoreView = [[SCCircularRefreshView alloc] initWithFrame:(CGRect){kScreenWidth/2, 22, kScreenWidth, 44}];
     self.loadMoreView.timeOffset = 0.0;
     [self.tableFooterView addSubview:self.loadMoreView];
     
 #endif
-
+    
     
 }
 
@@ -100,7 +102,7 @@ static CGFloat const kRefreshHeight = 44.0f;
     [super viewWillAppear:animated];
     
     [self.tableView deselectRowAtIndexPath:self.tableView.indexPathForSelectedRow animated:YES];
-
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -134,16 +136,16 @@ static CGFloat const kRefreshHeight = 44.0f;
     [super viewWillLayoutSubviews];
     
     self.tableView.scrollIndicatorInsets = UIEdgeInsetsMake(self.tableViewInsertTop, 0, self.tableViewInsertBottom, 0);
-
+    
 }
 
 #pragma mark - ScrollViewDelegate
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-
+    
     // Refresh
     CGFloat offsetY = -scrollView.contentOffsetY - self.tableViewInsertTop  - 25;
-
+    
     self.refreshView.timeOffset = MAX(offsetY / 60.0, 0);
     
     // LoadMore
@@ -156,9 +158,9 @@ static CGFloat const kRefreshHeight = 44.0f;
     if (scrollView.contentSizeHeight + scrollView.contentInsetTop < [UIScreen mainScreen].bounds.size.height) {
         return;
     }
-
+    
     CGFloat loadMoreOffset = - (scrollView.contentSizeHeight - self.view.height - scrollView.contentOffsetY + scrollView.contentInsetBottom);
-
+    
     if (loadMoreOffset > 0) {
         self.loadMoreView.timeOffset = MAX(loadMoreOffset / 60.0, 0);
     } else {
@@ -178,7 +180,7 @@ static CGFloat const kRefreshHeight = 44.0f;
     if (refreshOffset > 60 && self.refreshBlock && !self.isRefreshing) {
         [self beginRefresh];
     }
-
+    
     // loadMore
     CGFloat loadMoreOffset = scrollView.contentSizeHeight - self.view.height - scrollView.contentOffsetY + scrollView.contentInsetBottom;
     if (loadMoreOffset < -60 && self.loadMoreBlock && !self.isLoadingMore && scrollView.contentSizeHeight > [UIScreen mainScreen].bounds.size.height) {
@@ -224,8 +226,6 @@ static CGFloat const kRefreshHeight = 44.0f;
         [UIView animateWithDuration:0.15 delay:0 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
             
             self.tableView.contentInsetTop = kRefreshHeight + self.tableViewInsertTop;
-            [self.tableView setContentOffset:(CGPoint){0,- (kRefreshHeight + self.tableViewInsertTop )} animated:NO];
-            self.tableView.scrollIndicatorInsets = self.tableView.contentInset;
             
         } completion:^(BOOL finished){
             
@@ -243,7 +243,7 @@ static CGFloat const kRefreshHeight = 44.0f;
     [UIView animateWithDuration:0.5 animations:^{
         self.tableView.contentInsetTop = self.tableViewInsertTop;
     }];
-
+    
 }
 
 - (void)beginLoadMore {
@@ -252,15 +252,20 @@ static CGFloat const kRefreshHeight = 44.0f;
     
     self.isLoadingMore = YES;
     self.hadLoadMore = YES;
-    CGPoint contentOffset = self.tableView.contentOffset;
     
     if (self.loadMoreBlock) {
         self.loadMoreBlock();
     }
-    [UIView animateWithDuration:0.2 animations:^{
-        self.tableView.contentInsetBottom = kRefreshHeight + self.tableViewInsertBottom;
-        self.tableView.contentOffset = contentOffset;
-    }];
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [UIView animateWithDuration:0.15 delay:0 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
+            
+            self.tableView.contentInsetBottom = kRefreshHeight + self.tableViewInsertBottom;
+
+        } completion:^(BOOL finished){
+            
+        }];
+    });
     
     
 }
